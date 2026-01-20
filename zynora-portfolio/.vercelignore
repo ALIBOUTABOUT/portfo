@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env.local
+.env
+src/
+public/
+vite.config.js
+eslint.config.js
+package-lock.json
