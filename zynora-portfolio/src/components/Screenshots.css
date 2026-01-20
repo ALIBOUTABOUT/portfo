@@ -1,0 +1,370 @@
+.screenshots {
+  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-dark-brown) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.screenshots::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(32, 212, 196, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.screenshot-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.phone-mockup {
+  perspective: 1000px;
+}
+
+.phone-frame {
+  width: 220px;
+  height: 440px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: 
+    0 0 0 2px rgba(74, 38, 24, 0.5),
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.screenshot-card:hover .phone-frame {
+  transform: rotateY(5deg) rotateX(5deg);
+  box-shadow: 
+    0 0 0 2px rgba(32, 212, 196, 0.5),
+    0 35px 60px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(32, 212, 196, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 24px;
+  background: #000;
+  border-radius: 0 0 15px 15px;
+  z-index: 10;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--color-deep-black);
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+}
+
+.screenshot-title {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.screenshot-description {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+/* Mock Screen Styles */
+.mock-screen {
+  width: 100%;
+  height: 100%;
+  padding: 40px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mock-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.mock-logo {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--color-turquoise) 0%, var(--color-turquoise-dark) 100%);
+  color: var(--color-deep-black);
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.mock-greeting {
+  flex: 1;
+}
+
+.mock-text-lg {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.mock-text-sm {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.mock-stats-row {
+  display: flex;
+  gap: 10px;
+}
+
+.mock-stat-card {
+  flex: 1;
+  background: var(--color-surface);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.mock-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-turquoise);
+}
+
+.mock-stat-label {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.mock-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-top: 8px;
+}
+
+.mock-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.mock-action-btn {
+  flex: 1;
+  background: var(--color-reddish-brown);
+  color: var(--color-text-primary);
+  font-size: 10px;
+  padding: 10px 8px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Tracking Screen */
+.mock-map {
+  height: 150px;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-elevated) 100%);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mock-map-pin {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  font-size: 20px;
+}
+
+.mock-map-destination {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  font-size: 18px;
+}
+
+.mock-map-route {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 80px;
+  height: 2px;
+  background: var(--color-turquoise);
+  transform: rotate(25deg);
+}
+
+.mock-tracking-info {
+  background: var(--color-surface);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.mock-progress-bar {
+  height: 6px;
+  background: var(--color-surface-elevated);
+  border-radius: 3px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+.mock-progress {
+  height: 100%;
+  width: 65%;
+  background: linear-gradient(90deg, var(--color-turquoise), var(--color-turquoise-light));
+  border-radius: 3px;
+}
+
+.mock-eta {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-turquoise);
+}
+
+/* Marketplace Screen */
+.mock-search {
+  background: var(--color-surface);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.mock-categories {
+  display: flex;
+  gap: 10px;
+}
+
+.mock-category {
+  width: 40px;
+  height: 40px;
+  background: var(--color-surface);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.mock-products {
+  display: flex;
+  gap: 10px;
+}
+
+.mock-product {
+  flex: 1;
+  background: var(--color-surface);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mock-product-img {
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-reddish-brown), var(--color-dark-brown));
+}
+
+.mock-product-info {
+  padding: 8px;
+}
+
+.mock-price {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-turquoise);
+}
+
+/* Courier Screen */
+.mock-earnings {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-turquoise);
+  text-align: center;
+  padding: 16px;
+  background: var(--color-surface);
+  border-radius: 12px;
+}
+
+.mock-deliveries {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mock-delivery {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-surface);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.mock-delivery-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--color-reddish-brown);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.mock-delivery-info {
+  flex: 1;
+}
+
+.mock-delivery-price {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-turquoise);
+}
+
+@media (max-width: 768px) {
+  .screenshots-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  .phone-frame {
+    width: 180px;
+    height: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .phone-frame {
+    width: 220px;
+    height: 440px;
+  }
+}
